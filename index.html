@@ -78,12 +78,12 @@ layout: default
     <h2 class="title">Join Us</h2>
     <div class="row">
       <div class="col-sm-5 col-sm-offset-1 text-right text-right-sm">
-        <h1 class="join-us-intro">We Need Your Voice.<br> Join Us!</h1>
+        <h1 class="join-us-intro">Interested in helping us or have ideas?<br>Please reach out!</h1>
       </div>
       <div class="col-sm-5 text-left text-left-sm">
-        <p>Sign up to receive updates, progress reports and ways to get involved. We're excited to have you join our amazing community!</p>
+        <p>We would love to talk to you. Please fill out the Microsoft Form using the link below and someone from dungo digital will reach out directly!</p>
         {% if site.tinyletter_username %}
-        <p><em>No spam. Just the occasional update.</em></p>
+        <p><em>We hate annoying emails, too - don't worry. Friendly conversations only!</em></p>
         <div class="row">
           <div class="col-sm-12">
             <form class="form-inline" role="form" action="https://tinyletter.com/{{ site.tinyletter_username }}" method="post" target="popupwindow" onsubmit="window.open('https://tinyletter.com/{{ site.tinyletter_username }}', 'popupwindow', 'scrollbars=yes,width=800,height=600');return true">
@@ -153,9 +153,74 @@ layout: default
       <div class="info">
         <p><strong>Become a donor today.</strong><br>As a small grassroots organization, know that every dollar will have an immense impact on our ability to continue working towards our mission.</p>
         {% if site.donorbox_campaign_name %}
-          <div class="donorbox text-center">
-            <iframe src="https://donorbox.org/embed/{{ site.donorbox_campaign_name }}" height="600px" width="100%" style="max-width:500px; min-width:310px" seamless="seamless" name="donorbox" frameborder="0" scrolling="no"></iframe>
+          <div>
+            <div style="
+            overflow: auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: center;
+            width: 259px;
+            background: #FFFFFF;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            box-shadow: -2px 10px 5px rgba(0, 0, 0, 0);
+            border-radius: 10px;
+            font-family: IBM Plex Mono, SQ Market, Helvetica, Arial, sans-serif;
+            ">
+              <img src="https://items-images-production.s3.us-west-2.amazonaws.com/files/fc613cf7aa05db5fe19120b8ed8df5b4f210d51f/original.png" alt="General Donation" onerror="this.style.display='none'" style="width: 100%;">
+            <div style="padding: 20px;">
+              <a target="_blank" data-url="https://square.link/u/8dH8hgBH?src=embd" href="https://square.link/u/8dH8hgBH?src=embed" style="
+              display: inline-block;
+              font-size: 18px;
+              line-height: 48px;
+              height: 48px;
+              color: #ffffff;
+              min-width: 212px;
+              background-color: #8716d9;
+              text-align: center;
+              box-shadow: 0 0 0 1px rgba(0,0,0,.1) inset;
+              border-radius: 6px;
+            ">donate!</a>
+            </div>
+              <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=IBM Plex Mono">
           </div>
+          
+          
+            <script>
+              function showCheckoutWindow(e) {
+                e.preventDefault();
+          
+                const url = document.getElementById('embedded-checkout-modal-checkout-button').getAttribute('data-url');
+                const title = 'Square Payment Links';
+          
+                // Some platforms embed in an iframe, so we want to top window to calculate sizes correctly
+                const topWindow = window.top ? window.top : window;
+          
+                // Fixes dual-screen position                                Most browsers          Firefox
+                const dualScreenLeft = topWindow.screenLeft !==  undefined ? topWindow.screenLeft : topWindow.screenX;
+                const dualScreenTop = topWindow.screenTop !==  undefined   ? topWindow.screenTop  : topWindow.screenY;
+          
+                const width = topWindow.innerWidth ? topWindow.innerWidth : document.documentElement.clientWidth ? document.documentElement.clientWidth : screen.width;
+                const height = topWindow.innerHeight ? topWindow.innerHeight : document.documentElement.clientHeight ? document.documentElement.clientHeight : screen.height;
+          
+                const h = height * .75;
+                const w = 500;
+          
+                const systemZoom = width / topWindow.screen.availWidth;
+                const left = (width - w) / 2 / systemZoom + dualScreenLeft;
+                const top = (height - h) / 2 / systemZoom + dualScreenTop;
+                const newWindow = window.open(url, title, `scrollbars=yes, width=${w / systemZoom}, height=${h / systemZoom}, top=${top}, left=${left}`);
+          
+                if (window.focus) newWindow.focus();
+              }
+          
+              // This overrides the default checkout button click handler to show the embed modal
+              // instead of opening a new tab with the given link url
+              document.getElementById('embedded-checkout-modal-checkout-button').addEventListener('click', function (e) {
+                showCheckoutWindow(e);
+              });
+            </script>
+</div>
           {% if site.is_501c3 == true %}
             <p>Contributions are tax deductible to the extent permitted by law.<br>{{ site.org_name }} is a 501(c)(3) organization.</p>
           {% elsif site.fiscal_sponsor_name %}
