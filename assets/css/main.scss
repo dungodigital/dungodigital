@@ -8,20 +8,20 @@
 //
 
 {% if site.color_scheme == "one" %}
-  $color: #17baef;
-  $color-2: #eebf3f;
+  $color: #17baef; // light blue
+  $color-2: #eebf3f; // yellow
 {% elsif site.color_scheme == "two" %}
-  $color: #b4ca65;
-  $color-2: #dd7c4f;
+  $color: #b4ca65; // weird green
+  $color-2: #dd7c4f; // salmon peachish
 {% elsif site.color_scheme == "three" %}
-  $color: #6690b9;
-  $color-2: #f46fa3;
+  $color: #6690b9; // powder blue
+  $color-2: #f46fa3; // powder pink
 {% elsif site.color_scheme == "four" %}
-  $color: #50c8c9;
-  $color-2: #ffbe57;
+  $color: #50c8c9; // baby blue
+  $color-2: #ffbe57; // yellow
 {% else %}
-  $color: #6690b9;
-  $color-2: #dd9d71;
+  $color: #6690b9; // blue
+  $color-2: #dd9d71; // light peach
 {% endif %}
 
 //
