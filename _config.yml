@@ -19,13 +19,13 @@ org_address_suite: TX
 org_city: San Antonio
 org_state: TX
 org_zip: > # Enter zip on next line. Be sure to indent by two spaces.
-  78207
+  
 org_phone: > # Enter phone on next line. Be sure to indent by two spaces.
-  (757) 600 - 1910
+  (210) 904 - 9006
 
 #SOCIAL MEDIA
 org_twitter_username: dungodigital
-org_facebook_username: dungodigital
+org_facebook_username: https://www.facebook.com/profile.php?id=61575026146004
 org_instagram_username: dungodigital
 
 #TAX STATUS
